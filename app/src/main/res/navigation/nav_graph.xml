@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/NavigationMenuFragment">
+
+    <fragment
+        android:id="@+id/NavigationMenuFragment"
+        android:name="com.dasha.dogfactsproject.ui.fragment.MenuFragment"
+        tools:layout="@layout/menu_fragment">
+        <action
+            android:id="@+id/toFactFragment"
+            app:destination="@id/NavigationFactFragment" />
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/NavigationFactFragment"
+        android:name="com.dasha.dogfactsproject.ui.fragment.FactFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fact_fragment">
+
+        <action
+            android:id="@+id/toMenuFragment"
+            app:destination="@id/NavigationMenuFragment" />
+        <argument
+            android:name="fact"
+            app:argType="string" />
+    </fragment>
+</navigation>
